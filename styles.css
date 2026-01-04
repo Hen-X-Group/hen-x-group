@@ -81,4 +81,6 @@ html{scroll-padding-top:var(--header-height)}
 }
 
 /* Hide nav-toggle on larger screens */
-.nav-toggle{display:none}
+@media (min-width: 701px) {
+  .nav-toggle { display: none; }
+}
