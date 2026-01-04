@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hen-X-Group — Reliable Water Truck Services</title>
+  <meta name="description" content="Reliable Water Truck Services by Hen-X-Group — Clean potable water delivery, dust suppression, pool filling and 24/7 service. Call 0476 157 167.">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Hen-X-Group — Reliable Water Truck Services">
+  <meta property="og:description" content="From construction sites to residential needs, Hen-X-Group delivers clean, reliable water exactly when and where you need it.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:site_name" content="Hen-X-Group">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hen-X-Group — Reliable Water Truck Services">
+  <meta name="twitter:description" content="Clean potable water delivery, dust suppression, pool filling and 24/7 service.">
+  <meta name="twitter:image" content="og-image.png">
+
+  <!-- Fallback image references (og-image.png will be generated) -->
+  <link rel="image_src" href="Logo_transparent.png">
+  <meta property="og:image:alt" content="Hen-X-Group logo and water truck">
+
+  <!-- Structured data (LocalBusiness minimal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Hen-X-Group",
+    "telephone": "0476 157 167",
+    "email": "ben@hen-x-group.com.au",
+    "url": "",
+    "logo": "Logo_transparent.png",
+    "description": "Reliable Water Truck Services — potable water delivery, dust suppression, pool filling.",
+    "areaServed": ["NSW Central Coast","Newcastle","Hunter Valley"]
+  }
+  </script>
+
+  <!-- Favicon and manifest links -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="/favicon.ico/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <img src="Logo_transparent.png" alt="Hen-X-Group logo" class="logo">
+      <nav class="nav">
+        <a href="#services" class="cta">Services</a>
+        <a href="#fleet" class="cta">Fleet</a>
+        <a href="#contact" class="cta">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" role="img" aria-label="Water truck on site">
+    <div class="hero-overlay">
+      <div class="container hero-content">
+        <h1>Reliable Water Truck Services by Hen‑X‑Group</h1>
+        <p class="lead">Quality Water Delivered — Clean, prompt, professional.</p>
+        <a href="#contact" class="btn primary">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="container about">
+      <h2>Hen-X-Group – Your Premier Partner for Bulk Water Solutions</h2>
+      <p>From construction sites to residential needs, Hen‑X‑Group delivers clean, reliable water exactly when and where you need it. With our modern fleet, we handle jobs of any size efficiently and professionally.</p>
+
+      <div class="two-up">
+        <div>
+          <h3 id="fleet">Our Robust Fleet</h3>
+          <ul>
+            <li><strong>7,000 Liter Trucks:</strong> Perfect for smaller sites, quick fills, and precise applications.</li>
+            <li><strong>13,000 Liter Trucks:</strong> High-volume capacity for large-scale projects and rapid delivery.</li>
+          </ul>
+
+          <h3 id="services">Our Services</h3>
+          <ul>
+            <li>Experienced, licensed operators</li>
+            <li>24/7 service for emergencies</li>
+            <li>Competitive pricing and prompt scheduling</li>
+          </ul>
+
+          <h3>Specialized Services</h3>
+          <ul>
+            <li>Potable Drinking Water Delivery: Certified safe and clean for events, camps, emergencies, or onsite use.</li>
+            <li>Dust Suppression for Civil & Construction Sites: Effective spray systems to control dust and improve safety.</li>
+            <li>Swimming Pool Filling: Fast and convenient filling for residential or commercial pools.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Gallery</h3>
+          <div class="gallery">
+            <img src="image3.jpeg" alt="Hen-X-Group water truck 1">
+            <img src="image4.jpg" alt="Hen-X-Group water truck 2">
+            <img src="image5.jpeg" alt="Hen-X-Group water truck 3">
+            <img src="image2.webp" alt="Swimming pool water close-up">
+          </div>
+
+          <h3>Contact</h3>
+          <p class="contact-card">Phone: <a href="tel:0476157167">0476 157 167</a><br>Email: <a href="mailto:ben@hen-x-group.com.au">ben@hen-x-group.com.au</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact-section">
+      <h2>Request a Quote</h2>
+      <p>Use the form below or call us on <a href="tel:0476157167">0476 157 167</a>.</p>
+
+      <!-- Netlify form -->
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="contact-form">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
+
+        <label>Full name<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Phone<input type="tel" name="phone"></label>
+        <label>Service required<select name="service">
+          <option>Potable Water Delivery</option>
+          <option>Dust Suppression</option>
+          <option>Pool Filling</option>
+          <option>Other</option>
+        </select></label>
+        <label>Message<textarea name="message" rows="5"></textarea></label>
+
+        <button type="submit" class="btn primary">Get a Quote</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; Hen‑X‑Group • Phone: <a href="tel:0476157167">0476 157 167</a> • <a href="mailto:sarah@hen-x-group.com.au">sarah@hen-x-group.com.au</a></p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
