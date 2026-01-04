@@ -56,8 +56,39 @@ html{scroll-padding-top:var(--header-height)}
 
 .hidden{position:absolute;left:-9999px}
 
-@media(max-width:800px){
-  .two-up{grid-template-columns:1fr}
-  .nav{display:none}
-  .hero{height:48vh}
+/* Mobile improvements */
+@media (max-width: 700px) {
+  /* layout container */
+  .container { padding-left: 16px; padding-right: 16px; }
+
+  /* header / nav: stack and allow wrapping */
+  .site-header .container { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .nav { display:flex; gap:8px; flex-wrap:wrap; }
+  .nav a { padding:10px 12px; font-size:15px; }
+
+  /* hero spacing & text size */
+  .hero .hero-content { padding:48px 0; text-align:center; }
+  .hero h1 { font-size:1.6rem; line-height:1.15; margin-bottom:8px; }
+  .hero .lead { font-size:1rem; }
+
+  /* gallery responsive */
+  .gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+  @media (max-width:420px) { .gallery { grid-template-columns:1fr; } }
+
+  /* responsive images */
+  img, .hero, .hero img { max-width:100%; height:auto; display:block; }
+
+  /* form full width inputs */
+  .contact-form label { display:block; width:100%; margin-bottom:10px; }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="tel"],
+  .contact-form select,
+  .contact-form textarea { width:100%; box-sizing:border-box; padding:10px; font-size:15px; }
+
+  /* buttons and touch targets */
+  .btn { padding:12px 18px; font-size:16px; min-height:44px; }
+
+  /* footer spacing */
+  .site-footer .container { padding:24px 0; text-align:center; font-size:14px; }
 }
