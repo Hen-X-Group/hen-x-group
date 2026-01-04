@@ -118,9 +118,10 @@
       <h2>Request a Quote</h2>
       <p>Use the form below or call us on <a href="tel:0476157167">0476 157 167</a>.</p>
 
-      <!-- Netlify form -->
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="contact-form">
+      <!-- Form updated for Cloudflare Pages (submits via Formspree) -->
+      <form id="contact-form" class="contact-form" action="https://formspree.io/f/mnjngeoy" method="POST" novalidate>
         <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="_next" value="/thank-you.html">
         <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
 
         <label>Full name<input type="text" name="name" required></label>

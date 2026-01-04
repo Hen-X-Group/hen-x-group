@@ -61,3 +61,62 @@ document.addEventListener('DOMContentLoaded',function(){
     checkHeaderState();
   }
 });
+
+// Formspree submission handler for Cloudflare Pages
+(function () {
+  // Replace with your Formspree form endpoint (e.g. https://formspree.io/f/xyz123)
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjngeoy';
+
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // Honeypot check
+    const botField = form.querySelector('[name="bot-field"]');
+    if (botField && botField.value) return; // likely spam
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.textContent : null;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+    }
+
+    try {
+      const formData = new FormData(form);
+
+      const resp = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (resp.ok) {
+        // Successful submission
+        window.location.href = '/thank-you.html';
+        return;
+      }
+
+      // Handle non-OK response
+      let errMsg = 'There was a problem submitting the form. Please try again later.';
+      try {
+        const json = await resp.json();
+        if (json && json.error) errMsg = json.error;
+      } catch (_) {}
+
+      alert(errMsg);
+
+    } catch (err) {
+      alert('Network error. Please check your connection and try again.');
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText || 'Get a Quote';
+      }
+    }
+  });
+})();
