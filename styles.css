@@ -56,4 +56,29 @@ html{scroll-padding-top:var(--header-height)}
 
 .hidden{position:absolute;left:-9999px}
 
-/* Mobile improvements removed per user request — will revert to previous responsive rules. */
+/* Mobile: contained hero-overlay, stacked content, and mobile nav */
+@media (max-width:700px) {
+  /* keep header container positioning for absolute nav */
+  .site-header .container { position:relative; }
+
+  /* Contain the visual overlay to the centered hero content box */
+  .hero-overlay { background:transparent; display:flex; justify-content:center; }
+  .hero-content { max-width:var(--container); width:calc(100% - 32px); background:rgba(0,0,0,0.45); padding:20px; border-radius:8px; }
+  .hero h1, .hero .lead { color:#fff; text-align:center; }
+
+  /* Stack the two columns so gallery becomes full-width below services */
+  .two-up { grid-template-columns:1fr; }
+  .two-up > div { width:100%; }
+  .gallery { grid-template-columns:1fr 1fr; gap:8px; margin:12px 0; }
+  @media (max-width:420px) { .gallery { grid-template-columns:1fr; } }
+
+  /* Mobile nav toggle: hide default nav and show dropdown when toggled */
+  .nav-toggle { display:inline-flex; align-items:center; justify-content:center; background:transparent;border:0;color:var(--muted);font-size:22px;padding:8px;margin-left:8px }
+  .nav { display:none; position:absolute; top:calc(var(--header-height)); right:16px; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,0.12); border-radius:8px; flex-direction:column; padding:8px; min-width:160px; z-index:1000; }
+  .nav.open { display:flex; }
+  .nav a { display:block; margin:0; padding:10px 12px; color:var(--text); border-radius:6px; }
+  .nav a.cta{ background:transparent;color:var(--accent); padding:8px 12px }
+}
+
+/* Hide nav-toggle on larger screens */
+.nav-toggle{display:none}
