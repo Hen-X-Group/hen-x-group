@@ -78,6 +78,11 @@ html{scroll-padding-top:var(--header-height)}
   .nav.open { display:flex; }
   .nav a { display:block; margin:0; padding:10px 12px; color:var(--text); border-radius:6px; }
   .nav a.cta{ background:transparent;color:var(--accent); padding:8px 12px }
+
+  /* Ensure mobile dropdown links are dark even if header has .transparent */
+  .site-header.transparent .nav a {
+    color: var(--text);
+  }
 }
 
 /* Hide nav-toggle on larger screens */
