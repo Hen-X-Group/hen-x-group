@@ -56,6 +56,18 @@ html{scroll-padding-top:var(--header-height)}
 
 .hidden{position:absolute;left:-9999px}
 
+/* Testimonials styling */
+.testimonials{max-width:720px;margin:20px auto;padding:0 0}
+.testimonials h3{margin-bottom:12px}
+.testimonials blockquote{background:#fff;border-left:4px solid var(--accent);padding:12px 16px;margin:12px 0;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.06);font-style:italic;color:var(--muted)}
+.testimonials blockquote footer{display:block;margin-top:8px;font-style:normal;color:var(--text);font-weight:600;text-align:right}
+.testimonials .small{font-size:0.9rem;color:var(--muted);margin-top:8px}
+
+@media (max-width:700px){
+  .testimonials{padding:0 16px}
+  .testimonials blockquote{padding:12px;border-radius:8px}
+}
+
 /* Mobile: contained hero-overlay, stacked content, and mobile nav */
 @media (max-width:700px) {
   /* keep header container positioning for absolute nav */
