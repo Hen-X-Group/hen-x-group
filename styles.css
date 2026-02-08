@@ -68,6 +68,19 @@ html{scroll-padding-top:var(--header-height)}
   .testimonials blockquote{padding:12px;border-radius:8px}
 }
 
+/* FAQ styling */
+.faq{max-width:720px;margin:20px auto;padding:0}
+.faq h3{margin-bottom:12px}
+.faq .faq-item{border-top:1px solid #eee;padding:12px 0}
+.faq .faq-item:first-of-type{border-top:0}
+.faq .faq-item h4{margin:0 0 8px;font-size:1.05rem;color:var(--brand-dark)}
+.faq .faq-item p{margin:0;color:var(--muted);line-height:1.6}
+
+@media (max-width:700px){
+  .faq{padding:0 16px}
+  .faq .faq-item h4{font-size:1rem}
+}
+
 /* Mobile: contained hero-overlay, stacked content, and mobile nav */
 @media (max-width:700px) {
   /* keep header container positioning for absolute nav */
