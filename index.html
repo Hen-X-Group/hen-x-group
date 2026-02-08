@@ -45,7 +45,14 @@
     },
     "hasMap": "https://www.google.com/maps?q=H6R8+M5+Calga,+New+South+Wales",
     "areaServed": ["NSW Central Coast"],
-    "openingHours": ["Mo-Su 00:00-23:59"],
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:00","closes":"17:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:00","closes":"17:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:00","closes":"17:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:00","closes":"17:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"17:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"13:00"}
+    ],
     "sameAs": ["https://hen-x-group.com.au/", "https://www.google.com/maps?q=H6R8+M5+Calga,+New+South+Wales"]
   }
   </script>
@@ -207,6 +214,22 @@
 
         <button type="submit" class="btn primary">Get a Quote</button>
       </form>
+
+      <!-- Trading hours -->
+      <div class="hours" style="max-width:520px;margin:18px auto 0;">
+        <h4 style="margin-bottom:8px;">Trading Hours</h4>
+        <table class="hours-table" style="width:100%;border-collapse:collapse;text-align:left;">
+          <tbody>
+            <tr><td>Monday</td><td>6:00 am — 5:00 pm</td></tr>
+            <tr><td>Tuesday</td><td>6:00 am — 5:00 pm</td></tr>
+            <tr><td>Wednesday</td><td>6:00 am — 5:00 pm</td></tr>
+            <tr><td>Thursday</td><td>6:00 am — 5:00 pm</td></tr>
+            <tr><td>Friday</td><td>6:00 am — 5:00 pm</td></tr>
+            <tr><td>Saturday</td><td>7:00 am — 1:00 pm</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
     
           <!-- Testimonials / Reviews -->
