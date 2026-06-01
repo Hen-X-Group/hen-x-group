@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Group Gateway Homepage -->
   <url>
     <loc>https://hen-x-group.com.au/</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
+  
+  <!-- Dedicated Water Truck Business Landing Page -->
+  <url>
+    <loc>https://hen-x-group.com.au</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Form Submission Thank You Confirmation Page -->
   <url>
     <loc>https://hen-x-group.com.au/thank-you.html</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.30</priority>
   </url>
