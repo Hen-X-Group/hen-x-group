@@ -1,0 +1,117 @@
+:root{
+  --accent:#1C4176; /* primary (from user: R:28 G:65 B:118) */
+  --accent-2:#DF9645; /* secondary (from user: R:223 G:150 B:69) */
+  --brand-dark:#932F2B; /* tertiary/dark (from user: R:147 G:47 B:43) */
+  --bg:#ffffff;
+  --text:#0B0B0B;
+  --muted:#555;
+  --radius:8px;
+  --container:1100px;
+  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --header-height: 72px; /* fallback, JS will set actual value */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:var(--font-stack);color:var(--text);background:var(--bg);margin:0;line-height:1.5;padding-top:var(--header-height)}
+.container{max-width:var(--container);margin:0 auto;padding:24px}
+html{scroll-padding-top:var(--header-height)}
+
+.site-header{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));backdrop-filter:blur(6px);position:fixed;top:0;z-index:999;border-bottom:1px solid #eee;width:100%;transition:background 240ms ease,box-shadow 240ms ease,transform 240ms ease;}
+.site-header.scrolled{box-shadow:0 6px 18px rgba(0,0,0,0.12);background:rgba(255,255,255,0.98)}
+.site-header.hidden{transform:translateY(-120%);pointer-events:none}
+
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{height:56px;}
+.nav a{margin-left:20px;color:var(--muted);text-decoration:none}
+.nav a.cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:6px}
+.site-header.transparent .nav a{color:#fff}
+
+.hero{background-image:url('image4.jpg');background-size:cover;background-position:center;height:60vh;display:flex;align-items:center;color:#fff}
+.hero2{background-image:url('image6.jpg');background-size:cover;background-position:center;height:60vh;display:flex;align-items:center;color:#fff}
+.hero-overlay{width:100%;background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.45));padding:48px 0}
+.hero-content{padding:40px}
+.hero h1{font-size:clamp(28px,4vw,44px);margin:0 0 8px}
+.lead{font-size:18px;margin-bottom:16px}
+.btn{display:inline-block;text-decoration:none;border-radius:6px;padding:10px 16px;border:0;cursor:pointer}
+.primary{background:var(--accent);color:#fff}
+
+.about h2{margin-top:18px}
+.two-up{display:grid;grid-template-columns:1fr 360px;gap:24px;margin-top:16px}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gallery img{width:100%;height:150px;object-fit:cover;border-radius:6px}
+.contact-card{background:#f7f9fb;padding:12px;border-radius:6px}
+.bullets{list-style:none;padding:0}
+.bullets li:before{content:"• ";color:var(--accent);font-weight:bold}
+
+/* contact form layout (rolled back centering changes) */
+.contact-form{display:grid;gap:12px;max-width:720px}
+.contact-form label{display:block;font-size:14px}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:6px}
+
+.site-footer{border-top:1px solid #eee;padding:20px 0;margin-top:40px;text-align:center;color:var(--muted)}
+
+.hidden{position:absolute;left:-9999px}
+
+/* Testimonials styling */
+.testimonials{max-width:720px;margin:20px auto;padding:0 0}
+.testimonials h3{margin-bottom:12px}
+.testimonials blockquote{background:#fff;border-left:4px solid var(--accent);padding:12px 16px;margin:12px 0;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.06);font-style:italic;color:var(--muted)}
+.testimonials blockquote footer{display:block;margin-top:8px;font-style:normal;color:var(--text);font-weight:600;text-align:right}
+.testimonials .small{font-size:0.9rem;color:var(--muted);margin-top:8px}
+
+@media (max-width:700px){
+  .testimonials{padding:0 16px}
+  .testimonials blockquote{padding:12px;border-radius:8px}
+}
+
+/* FAQ styling */
+.faq{max-width:720px;margin:20px auto;padding:0}
+.faq h3{margin-bottom:12px}
+.faq .faq-item{border-top:1px solid #eee;padding:12px 0}
+.faq .faq-item:first-of-type{border-top:0}
+.faq .faq-item h4{margin:0 0 8px;font-size:1.05rem;color:var(--brand-dark)}
+.faq .faq-item p{margin:0;color:var(--muted);line-height:1.6}
+
+@media (max-width:700px){
+  .faq{padding:0 16px}
+  .faq .faq-item h4{font-size:1rem}
+}
+
+/* Mobile: contained hero-overlay, stacked content, and mobile nav */
+@media (max-width:700px) {
+  /* keep header container positioning for absolute nav */
+  .site-header .container { position:relative; }
+
+  /* Contain the visual overlay to the centered hero content box */
+  .hero-overlay { background:transparent; display:flex; justify-content:center; }
+  .hero-content { max-width:var(--container); width:calc(100% - 32px); background:rgba(0,0,0,0.45); padding:20px; border-radius:8px; }
+  .hero h1, .hero .lead { color:#fff; text-align:center; }
+
+  /* Stack the two columns so gallery becomes full-width below services */
+  .two-up { grid-template-columns:1fr; }
+  .two-up > div { width:100%; }
+  .gallery { grid-template-columns:1fr 1fr; gap:8px; margin:12px 0; }
+  @media (max-width:420px) { .gallery { grid-template-columns:1fr; } }
+
+  /* Mobile nav toggle: hide default nav and show dropdown when toggled */
+  .nav-toggle { display:inline-flex; align-items:center; justify-content:center; background:transparent;border:0;color:var(--muted);font-size:22px;padding:8px;margin-left:8px }
+  .nav { display:none; position:absolute; top:calc(var(--header-height)); right:16px; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,0.12); border-radius:8px; flex-direction:column; padding:8px; min-width:160px; z-index:1000; }
+  .nav.open { display:flex; }
+  .nav a { display:block; margin:0; padding:10px 12px; color:var(--text); border-radius:6px; }
+  .nav a.cta{ background:transparent;color:var(--accent); padding:8px 12px }
+
+  /* Ensure mobile dropdown links are dark even if header has .transparent */
+  .site-header.transparent .nav a {
+    color: var(--text);
+  }
+}
+
+/* Hide nav-toggle on larger screens */
+@media (min-width: 701px) {
+  .nav-toggle { display: none; }
+}
